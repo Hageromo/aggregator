@@ -12,6 +12,6 @@ jobs:
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v1
       with:
-        token: xyz
-        repository: Hageromo/xyz
+        token: ${{ secrets.REPO_TOKEN }}
+        repository: Hageromo/cypress
         event-type: cart-tests
