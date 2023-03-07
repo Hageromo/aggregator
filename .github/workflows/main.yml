@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: xyz
+        repository: Hageromo/xyz
+        event-type: cart-tests
