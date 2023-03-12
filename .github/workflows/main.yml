@@ -19,3 +19,4 @@ jobs:
         repository: Hageromo/cypress
         event-type: cart-tests
         client-payload: '{"title": ${{ github.event.pull_request.title }}"}'
+        
