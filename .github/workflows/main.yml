@@ -9,6 +9,7 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
+    - run: echo ${{ github.event.pull_request.title }} 
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v1
       with:
