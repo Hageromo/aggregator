@@ -8,6 +8,7 @@ on:
 jobs:
   dispatch:
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }}
     steps:
     - run: echo ${{ github.event.push.body }}
     - run: echo ${{ github.event.pull_request.body }}
