@@ -8,6 +8,7 @@ on:
 jobs:
   dispatch:
     runs-on: ubuntu-latest
+    if: ${{ (github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main') || github.event_name == 'workflow_dispatch' }}
     steps:
     - run: echo ${{ github.event.push.body }}
     - run: echo ${{ github.event.pull_request.body }}
@@ -17,5 +18,4 @@ jobs:
         token: ${{ secrets.REPO_TOKEN }}
         repository: Hageromo/cypress
         event-type: cart-tests
-        if: ${{ github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' }}
         client-payload: '{"title": ${{ github.event.pull_request.title }}"}'
